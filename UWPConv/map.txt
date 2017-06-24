@@ -1,0 +1,7 @@
+[Files]
+"appxmanifest.xml"     "appxmanifest.xml"
+"win32\DumbPipeBench.exe"     "win32\DumbPipeBench.exe"
+"win32\FSharp.Core.dll"     "win32\FSharp.Core.dll"
+"logo_44x44.png"    "logo_44x44.png"
+"logo_150x150.png"    "logo_150x150.png"
+"logo_50x50.png"    "logo_50x50.png"

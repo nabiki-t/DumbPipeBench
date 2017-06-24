@@ -1,0 +1,22 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Detail"
+        VerticalAlignment="Top" MinWidth="367" MinHeight="165" Width="367" Height="165" ResizeMode="NoResize" WindowStartupLocation="CenterOwner" >
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="ReceiveBufferSizeLabel" Content="Receive Buffer Size" HorizontalAlignment="Left" Height="28" Margin="10,28,0,0" VerticalAlignment="Top" Width="141"/>
+        <TextBox x:Name="ReceiveBufferSizeTextBox" HorizontalAlignment="Left" Height="28" Margin="156,28,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="79" TabIndex="2" VerticalContentAlignment="Center"/>
+        <Label x:Name="SendBufferSizeLabel" Content="Send Buffer Size" HorizontalAlignment="Left" Height="28" Margin="10,61,0,0" VerticalAlignment="Top" Width="141"/>
+        <TextBox x:Name="SendBufferSizeTextBox" HorizontalAlignment="Left" Height="28" Margin="156,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="79" TabIndex="3" VerticalContentAlignment="Center"/>
+        <CheckBox x:Name="DisableNagleCheck" Content="Disable Nagle's algorithm" HorizontalAlignment="Left" Height="16" Margin="10,7,0,0" VerticalAlignment="Top" Width="272" TabIndex="1"/>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Left" Height="25" Margin="179,94,0,0" VerticalAlignment="Top" Width="80" TabIndex="4"/>
+        <Button x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Height="25" Margin="267,94,0,0" VerticalAlignment="Top" Width="80" TabIndex="5"/>
+        <Label x:Name="ReceiveBufferSizeRangeLabel" Content="(0-2147483647)" HorizontalAlignment="Left" Height="28" Margin="240,28,0,0" VerticalAlignment="Top" Width="112"/>
+        <Label x:Name="SendBufferSizeRangeLabel" Content="(0-2147483647)" HorizontalAlignment="Left" Height="28" Margin="240,61,0,0" VerticalAlignment="Top" Width="112"/>
+    </Grid>
+</Window>

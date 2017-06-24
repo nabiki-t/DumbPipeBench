@@ -1,0 +1,490 @@
+﻿
+<xsd:schema xmlns:xsd='http://www.w3.org/2001/XMLSchema'>
+  <xsd:element name='BumbPipeBenchConf'>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name='Ver100' minOccurs='1' maxOccurs='1'>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name='InputParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='RunMode' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="TCPClient" />
+                          <xsd:enumeration value="TCPServer" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='TargetAddress' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength  value="32768" />
+                          <xsd:minLength  value="0" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='PortNumber' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="65535" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='LogFileName' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:maxLength  value="32768" />
+                          <xsd:minLength  value="0" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='AutoScroll' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name='TCPClientParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='ReceiveOnly' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='DisableNagle' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ReceiveBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='SendBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxConnectionCount' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="255" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='RampUpTime' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="60" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='EnableTrafficShaping' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MinBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Wavelength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Phase' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name='TCPServerParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='ReceiveOnly' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='DisableNagle' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ReceiveBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='SendBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                   <xsd:element name='EnableTrafficShaping' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MinBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Wavelength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Phase' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name='TCPReqResClientParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='DisableNagle' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ReceiveBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='SendBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxConnectionCount' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="255" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='RampUpTime' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="60" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MinReqestDataLength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="64" />
+                          <xsd:maxInclusive value="65536" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxReqestDataLength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="64" />
+                          <xsd:maxInclusive value="65536" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MinResponceDataLength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="64" />
+                          <xsd:maxInclusive value="65536" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxResponceDataLength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="64" />
+                          <xsd:maxInclusive value="65536" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name='TCPReqResServerParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='DisableNagle' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ReceiveBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='SendBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+
+              <xsd:element name='UDPClientParam' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='ReceiveOnly' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='DontFragment' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:string">
+                          <xsd:enumeration value="True" />
+                          <xsd:enumeration value="False" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='TTL' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="255" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ReceiveBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='SendBufferSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MinBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='MaxBytesPerSec' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="2147483647" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Wavelength' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='Phase' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="0" />
+                          <xsd:maxInclusive value="3600" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='DatagramSize' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:integer">
+                          <xsd:minInclusive value="64" />
+                          <xsd:maxInclusive value="65536" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:element name='ScreenMetrix' minOccurs='1' maxOccurs='1'>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:element name='ListColumnWidth00' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth01' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth02' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth03' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth04' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth05' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                    <xsd:element name='ListColumnWidth06' minOccurs='1' maxOccurs='1'>
+                      <xsd:simpleType>
+                        <xsd:restriction base="xsd:positiveInteger">
+                          <xsd:minInclusive value="1" />
+                          <xsd:maxInclusive value="1024" />
+                        </xsd:restriction>
+                      </xsd:simpleType>
+                    </xsd:element>
+                  </xsd:sequence>
+                </xsd:complexType>
+              </xsd:element>
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

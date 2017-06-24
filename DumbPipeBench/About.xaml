@@ -1,0 +1,13 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="About"
+        VerticalAlignment="Top" WindowStartupLocation="CenterOwner" ResizeMode="NoResize" Height="107.611" Width="452.778" >
+    <Grid>
+        <Button x:Name="OKButton" Content="OK" HorizontalAlignment="Left" Height="25" Margin="352,36,0,0" VerticalAlignment="Top" Width="80" TabIndex="11"/>
+        <Image HorizontalAlignment="Left" Height="51" Margin="10,10,0,0" VerticalAlignment="Top" Width="52" Source="DumbPipeBench.ico"/>
+        <Label Content="DumbPipeBench Version 1.0.0&#xA;Copyright (c) 2017 nabiki_t All Right Reserved." HorizontalAlignment="Left" Height="51" Margin="67,10,0,0" VerticalAlignment="Top" Width="280"/>
+    </Grid>
+</Window>

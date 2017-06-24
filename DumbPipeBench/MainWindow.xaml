@@ -1,0 +1,77 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="DumbPipeBench"
+        VerticalAlignment="Top" MinWidth="600" MinHeight="350" Width="693.714" Height="497.143" Icon="/DumbPipeBench;component/DumbPipeBench.ico" >
+
+    <Window.Resources>
+        <Style x:Key="ListViewItemStyle" TargetType="ListViewItem">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+
+        <DataTemplate x:Key="TxBytesColumn">
+            <TextBlock Text="{Binding TxBytes}" HorizontalAlignment="Right" />
+        </DataTemplate>
+        <DataTemplate x:Key="RxBytesColumn">
+            <TextBlock Text="{Binding RxBytes}" HorizontalAlignment="Right" />
+        </DataTemplate>
+        <DataTemplate x:Key="Ext00Column">
+            <TextBlock Text="{Binding Ext00}" HorizontalAlignment="Right" />
+        </DataTemplate>
+        <DataTemplate x:Key="Ext01Column">
+            <TextBlock Text="{Binding Ext01}" HorizontalAlignment="Right" />
+        </DataTemplate>
+        <DataTemplate x:Key="Ext02Column">
+            <TextBlock Text="{Binding Ext02}" HorizontalAlignment="Right" />
+        </DataTemplate>
+        <DataTemplate x:Key="Ext03Column">
+            <TextBlock Text="{Binding Ext03}" HorizontalAlignment="Right" />
+        </DataTemplate>
+
+    </Window.Resources>
+
+
+    <Grid>
+        <ListView Name="ResultList" Margin="10,200,10,38.571" TabIndex="14" ItemsSource="{Binding}" ItemContainerStyle="{StaticResource ListViewItemStyle}">
+            <ListView.View>
+                <GridView AllowsColumnReorder="False">
+                    <GridViewColumn Header="#" Width="25" DisplayMemberBinding="{Binding Number}"/>
+                    <GridViewColumn Header="Time" Width="120" DisplayMemberBinding="{Binding Time}"/>
+                    <GridViewColumn Header="Connections" Width="100" DisplayMemberBinding="{Binding Connections}"/>
+                    <GridViewColumn Header="TxBytes/s" Width="100" CellTemplate="{StaticResource TxBytesColumn}" />
+                    <GridViewColumn Header="RxBytes/s" Width="100" CellTemplate="{StaticResource RxBytesColumn}" />
+                    <GridViewColumn Header="" Width="100" CellTemplate="{StaticResource Ext00Column}" />
+                    <GridViewColumn Header="" Width="100" CellTemplate="{StaticResource Ext01Column}" />
+                    <GridViewColumn Header="" Width="100" CellTemplate="{StaticResource Ext02Column}" />
+                    <GridViewColumn Header="" Width="100" CellTemplate="{StaticResource Ext03Column}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Menu Height="26" VerticalAlignment="Top" TabIndex="1">
+            <MenuItem Header="_File" Height="26" >
+                <MenuItem Header="_Exit" Name="Menu_File_Exit" />
+            </MenuItem>
+            <MenuItem Header="_Help" Height="26">
+                <MenuItem Header="_About" Name="Menu_Help_About" />
+            </MenuItem>
+        </Menu>
+        <Label Name="TargetAddressLabel" Content="Target Address" HorizontalAlignment="Left" Height="28" Margin="10,68,0,0" VerticalAlignment="Top" Width="141" TabIndex="5"/>
+        <TextBox Name="TargetAddressTextBox" Height="28" Margin="156,68,10,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" TabIndex="6" VerticalContentAlignment="Center"/>
+        <Label Name="PortNumberLabel" Content="Port Number" HorizontalAlignment="Left" Height="28" Margin="10,101,0,0" VerticalAlignment="Top" Width="141" TabIndex="7"/>
+        <TextBox Name="PortNumberTextBox" HorizontalAlignment="Left" Height="28" Margin="156,101,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="126" TabIndex="8" VerticalContentAlignment="Center"/>
+        <Label Name="ResultLabel" Content="Result" HorizontalAlignment="Left" Height="28" Margin="10,167,0,0" VerticalAlignment="Top" Width="141" TabIndex="13"/>
+        <Label Name="LogFileLabel" Content="Log File" HorizontalAlignment="Left" Margin="10,0,0,5.286" Width="141" Height="28" VerticalAlignment="Bottom" TabIndex="15"/>
+        <TextBox Name="LogFileTextBox" Margin="156,0,47.286,5.286" TextWrapping="Wrap" Text="" Height="28" VerticalAlignment="Bottom" TabIndex="16" VerticalContentAlignment="Center"/>
+        <Button Name="LogFileBrouseButton" Content="..." Margin="0,0,10.429,5.286" HorizontalAlignment="Right" Width="32" Height="28" VerticalAlignment="Bottom" TabIndex="17"/>
+        <Label Name="ProtocolLabel" Content="Mode" HorizontalAlignment="Left" Height="28" Margin="10,35,0,0" VerticalAlignment="Top" Width="141" TabIndex="2"/>
+        <ComboBox x:Name="ModeCombo" Height="28" Margin="156,35,197,0" VerticalAlignment="Top" TabIndex="3" VerticalContentAlignment="Center" AutomationProperties.AcceleratorKey="M"/>
+        <Button Name="StartButton" Content="_Start" Height="61" Margin="0,101,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="182" TabIndex="10"/>
+        <CheckBox x:Name="AutoScrollCheck" Content="_Auto Scroll" HorizontalAlignment="Right" Height="17" Margin="0,178,71,0" VerticalAlignment="Top" Width="104" TabIndex="11"/>
+        <Button x:Name="DetailButton" Content="Detail" Height="28" Margin="0,35,10,0" VerticalAlignment="Top" TabIndex="4" HorizontalAlignment="Right" Width="182"/>
+        <Label x:Name="PortNumberRangeLabel" Content="(1-65535)" HorizontalAlignment="Left" Height="28" Margin="287,101,0,0" VerticalAlignment="Top" Width="71" TabIndex="9"/>
+        <Button x:Name="GraphButton" Content="_Graph" Height="28" Margin="0,167,10,0" VerticalAlignment="Top" TabIndex="12" HorizontalAlignment="Right" Width="56"/>
+
+    </Grid>
+</Window>

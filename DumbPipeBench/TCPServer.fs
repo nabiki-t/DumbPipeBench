@@ -63,7 +63,7 @@ type CTCPServer =
 
         // TCPリスナを構築
         try
-            this.m_TcpListener <- new TcpListener ( IPAddress.Any,int this.rConfig.PortNumber)
+            this.m_TcpListener <- System.Net.Sockets.TcpListener.Create  ( int this.rConfig.PortNumber )
             this.m_TcpListener.Start ()
         with
         | _ as e ->
